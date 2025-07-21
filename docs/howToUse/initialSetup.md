@@ -40,7 +40,7 @@
     >
     > <copy>python -m venv venv</copy>
     >
-    > <copy>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</copy>>
+    > <copy>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</copy>
     >
     > <copy>venv\Scripts\activate.ps1</copy>
     > 

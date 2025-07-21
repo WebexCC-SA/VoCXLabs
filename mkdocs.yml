@@ -35,8 +35,8 @@ theme:
   favicon: template_assets/webex75.png
 extra:
   generator: false
-  repo: "https://github.com/kevsimps/wx1_25.git"
-  site_event: test
+  repo: "https://github.com/WebexCC-SA/VoCXLabs.git"
+  site_event: <g>VoCX</g>
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
