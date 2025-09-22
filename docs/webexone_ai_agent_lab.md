@@ -60,8 +60,8 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
    Password  
 
 2. Go to **Contact Center** from the left navigation panel → **AI Agents**  
-
-   ![Profiles](https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M6_OpenWebexAI.gif)  
+> ??? Note "Show Me"
+   ![alt text](assets/openTerminalCreateKB.gif)
 
 3. Click on Build your AI Agent
 
