@@ -86,8 +86,8 @@ nav:
       - Overview: overview.md
       - Webex One Partner Lab: webexone_ai_agent_lab.md
       - Conclusion: conclusion.md
-    - How to use this guide:
-      - Initial Setup: howToUse/initialSetup.md
-      - Using the tool after the initial setup: howToUse/postInitial.md
-      - Publishing your changes: howToUse/syncChanges.md
+  # - How to use this guide:
+  #     - Initial Setup: howToUse/initialSetup.md
+  #     - Using the tool after the initial setup: howToUse/postInitial.md
+  #     - Publishing your changes: howToUse/syncChanges.md
  
