@@ -86,9 +86,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Lab:
-      - Overview: overview.md
+      # - Overview: overview.md
       - Webex One Partner Lab: webexone_ai_agent_lab.md
-      - Conclusion: conclusion.md
+      # - Conclusion: conclusion.md
   - How to use this guide:
       - Setting up and using the tool:
         - Initial Setup: howToUse/initialSetup.md

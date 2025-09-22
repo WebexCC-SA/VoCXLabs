@@ -1,14 +1,14 @@
 # AI Agents: Redefining Travel – Your Virtual Companion Awaits!
 
-## Section 1
+<!-- ## Section 1 -->
 
-Please use the following credentials to connect to device:
+<!-- Please use the following credentials to connect to device:
 
-| <!-- -->         | <!-- -->         |
-| ---------------- | ---------------- |
+
+<!-- | ---------------- | ---------------- |
 | `IP Address`     | 1.1.1.1          |
 | `Username`       | admin            |
-| `Password`       | C1sco123         |
+| `Password`       | C1sco123         | -->
 
 
 ---
