@@ -1,7 +1,7 @@
 ---
-site_name: LABXXX-1234 My famous WebexOne Lab # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
-site_description: LABXXX-1234 My famous WebexOne Lab # must be same as "site_name"
-site_author: John Doe
+site_name: VoCX Voice Of Customer Experience # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
+site_description: VoCX Voice Of Customer Experience # must be same as "site_name"
+site_author: Stephanie Ross
 copyright: Copyright &copy; 2025 Cisco
 theme:
   name: material
@@ -45,8 +45,8 @@ plugins:
   - search
   - macros
   # - with-pdf:
-  #     cover_title: LABXXX-1234
-  #     cover_subtitle: My famous WebexOne Lab
+  #     cover_title: WebexOne AI Agent
+  #     cover_subtitle: AI Agents: Redefining Travel – Your Virtual Companion Awaits!
   #     cover_logo: template_assets/wx1Splash_new.gif
   - glightbox:
       touchNavigation: true
@@ -84,10 +84,9 @@ nav:
   - Home: index.md
   - Lab:
       - Overview: overview.md
-      - Lab 1 - Getting Started: lab1_getting_started.md
+      - Webex One Partner Lab: webexone_ai_agent_lab.md
       - Conclusion: conclusion.md
-  - Topologies: topologies.md
-  - How to use this guide:
+    - How to use this guide:
       - Initial Setup: howToUse/initialSetup.md
       - Using the tool after the initial setup: howToUse/postInitial.md
       - Publishing your changes: howToUse/syncChanges.md

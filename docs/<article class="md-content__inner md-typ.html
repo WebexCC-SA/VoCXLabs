@@ -1,0 +1,196 @@
+<article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mission-7-ai-autonomous-agent-in-action-bonus">Mission 7: AI Autonomous Agent in Action <span style="color: blue;">(BONUS)</span></h1>
+<h2 id="disclaimer"><span style="color: red;"><strong>Disclaimer</strong></span></h2>
+<p>Please note that the AI Agent is scheduled for General Availability (GA) in Q1 of the 2025 calendar year (CY25). This exercise is designed to provide you with an early glimpse and understanding of the feature's capabilities. We appreciate your participation and value your feedback as we refine this offering ahead of its official release.</p>
+<p><strong></strong></p><details><summary><strong>Good to Know <span style="color: orange;">[Optional]</span></strong></summary><p></p>
+<h3 id="ai-autonomous-agent-overview">AI Autonomous Agent Overview</h3>
+<p>The Autonomous AI Agent for performing actions can handle various tasks, including:</p>
+<ul>
+<li>Natural Language Processing (NLP)—Understand and respond to human language in a natural and conversational manner.</li>
+<li>Decision making—Make informed choices based on available information and predefined rules.</li>
+<li>Automation—Automate repetitive or time-consuming tasks.
+</li></ul></details>
+
+<h2 id="story">Story</h2>
+<p>As a visitor to Amsterdam, you want to quickly find restaurants offering various international cuisines in the city and easily figure out how to get to them from your current location at the RAI.</p>
+<h3 id="call-flow-overview">Call Flow Overview</h3>
+<ol>
+<li>A new call enters the flow. <br></li>
+<li>The caller asks about restaurants in Amsterdam.<br></li>
+<li>The AI agent responds with information generated from the knowledge base configuration.<br></li>
+</ol>
+<h2 id="mission-overview">Mission overview</h2>
+<p>Your mission is to:</p>
+<ol>
+<li>Create a knowledge base (KB) and AI agent to provide answers about Amsterdam, including places to visit, restaurants, nightclubs, and directions from the current RAI Amsterdam Convention Center.<br></li>
+<li>Configure the AI agent with handoff functionality to transfer the conversation to a live agent when necessary.<br></li>
+</ol>
+<hr>
+<h2 id="build">Build</h2>
+<h3 id="creating-a-knowldge-base">Creating a Knowldge Base</h3>
+<ol>
+<li>
+<p><span style="color: red;">[IMPORTANT]</span> <a href="https://drive.google.com/drive/folders/1b8x_om4rQonuJ52wRYif1LPP5qEX4RDI?usp=sharing" target="_blank">Download</a> source file from shared folder.</p>
+<blockquote>
+<p><strong>Amsterdam_Tourist_Guide.txt</strong> - file contains information for tourists like places to visit, restaurants, pubs etc. and how to reach those places from RAI Amsterdam Convention Center
+</p>
+</blockquote>
+</li>
+<li>
+<p>Login into <a href="https://admin.webex.com" target="_blank">Webex Control Hub</a> by using your Admin profile <strong><span class="attendee-id-container">wxcclabs+admin_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+admin_ID" data-suffix="@gmail.com">235</span>@gmail.com<span class="copy" title="Click to copy!"></span></span></strong>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you.</p>
+</li>
+<li>
+<p>Go to Contact Center from the left side navigation panel, and under Quick Links, click on <strong>Webex AI Agent</strong></p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M6_OpenWebexAI.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M6_OpenWebexAI.gif"></a>  </p>
+</li>
+<li>
+<p>In AI Agent Builder navigate to <strong>Knowledge</strong> from left hand side menu panel. </p>
+</li>
+<li>
+<p>Click <strong>Create Knowledge Base</strong>, provide Knowledge base name as <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">235</span>_AI_KB<span class="copy" title="Click to copy!"></span></span></strong>, then click <strong>Create</strong>.</p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AIKBCreate.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AIKBCreate.gif"></a></p>
+</li>
+<li>
+<p>Click <strong>Add File</strong> or drag and drop file <strong>Amsterdam_Tourist_Guide.txt</strong> you downloaded from external drive on <strong>Step 1</strong>. Then click <strong>Process Files</strong>.</p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AIKBFileUpload.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AIKBFileUpload.gif"></a></p>
+</li>
+<li>
+<p>Navigate to <strong>Dashboard</strong> from the right-hand side menu panel and click <strong>Create Agent</strong></p>
+</li>
+<li>Select <strong>Start from Scratch</strong> and click <strong>Next</strong></li>
+<li>
+<p>On <strong>Create an AI agent</strong> page select the following select the type of agent: <strong>Autonomous</strong></p>
+</li>
+<li>
+<p>New section <strong>Add the essential details</strong> will appear. Provide the following information, then click <strong>Create</strong>:</p>
+<blockquote>
+<p>Agent Name: <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">235</span>_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span></strong></p>
+<p>System ID is created automatically</p>
+<p>AI engine: <strong>Nova</strong></p>
+<p>Knowledge base: <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">235</span>_AI_KB<span class="copy"></span></span></strong></p>
+<p>Agent's goal: <strong><em>You are a helpful, polite agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there.</em></strong><span class="copy-static" title="Click to copy!" data-copy-text="You are a helpful, polite   agent who will help the user with their Amsterdam related queries such as restaurant, pubs, places to visit and what transport can be used to get there."><span class="copy"></span></span></p>
+</blockquote>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentCreate.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentCreate.gif"></a></p>
+</li>
+<li>
+<p>Switch to <strong>Actions</strong> tab ans make sure <strong>Agent handover</strong> togle is turned on. This will allow you to handoff calls to human agent on request while talking to your Virtual Agent.</p>
+</li>
+<li>
+<p>Switch to <strong>Knowledge</strong> tab and from <strong>Knowledge base</strong> drop-down list select <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AI_KB">235</span>_AI_KB<span class="copy" title="Click to copy!"></span></span></strong></p>
+</li>
+<li>
+<p>Click <strong>Save Changes</strong>, then click <strong>Publish</strong>. Provide any version name in popped up window (ex. "1.0").</p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentaMapKB.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentaMapKB.gif"></a></p>
+</li>
+<li>
+<p>Click on <strong>Preview</strong> to test your AI Agent and ask the following: <strong>"I'm looking for an Italian restaurant close to RAI."</strong><span class="copy-static" title="Click to copy!" data-copy-text="I'm looking for an Italian restaurant close to RAI."><span class="copy"></span></span></p>
+</li>
+</ol>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentPreview.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentPreview.gif"></a></p>
+<hr>
+<h2 id="integrating-the-bot-with-flow-for-voice-calls">Integrating the Bot with Flow for Voice Calls</h2>
+<ol>
+<li>
+<p>In Control Hub navigate to <strong>Flows</strong>, click on <strong>Manage Flows</strong> dropdown list and select <strong>Create Flows</strong></p>
+</li>
+<li>
+<p>Select Start Fresh and name the new flow <strong><span class="attendee-id-container">AutonomousAI_Flow_<span class="attendee-id-placeholder" data-prefix="AutonomousAI_Flow_">235</span><span class="copy" title="Click to copy!"></span></span></strong></p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_Flow_CreateFlow.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_Flow_CreateFlow.gif"></a>  </p>
+</li>
+<li>
+<p>Make sure the <strong>Edit</strong> mode at the top is set to <strong>ON</strong>. Then, drag and drop the <strong>Virtual Agent V2</strong> and <strong>DisconnectContact</strong> activities from the left panel onto the canvas.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please make sure to use <strong>VirtualAgentV2</strong> activity and <span style="color: red;"><strong>NOT</strong></span> <strong>VirtualAgent</strong> also present on the Activity Library for Backward Compatability.</p>
+</div>
+<blockquote>
+<p>Connect the <strong>New Phone Contact</strong> output node edge to this <strong>VirtualAgentV2</strong> node</p>
+<p>Connect the Handled outputs to <strong>DisconnectContact</strong> </p>
+<p>Connect the Errored outputs to <strong>DisconnectContact</strong> </p>
+<p>Set <strong>Static Contact Center AI Config</strong></p>
+<p>Contact Center AI Config: <strong>Webex AI Agent (Autonomous)</strong></p>
+<p>Virtual Agent: <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_AutoAI_Lab">235</span>_AutoAI_Lab<span class="copy" title="Click to copy!"></span></span></strong></p>
+</blockquote>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_Flow_AddVAv2.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_Flow_AddVAv2.gif"></a>  </p>
+</li>
+<li>
+<p>Drag and drop following nodes:</p>
+<ul>
+<li><strong>Queue Contact</strong> activity onto the Flow from the left side panel</li>
+</ul>
+<blockquote>
+<p>Connect the <strong>Escalated</strong> path from the <strong>Virtual Agent V2</strong> activity to the <strong>Queue Contact</strong> activity.</p>
+<p>Connect the <strong>Queue Contact</strong> activity to the <strong>Play Music</strong> activity</p>
+<p>Connect the <strong>Failure</strong> path from the <strong>Queue Contact</strong> activity to the <strong>Disconnect Contact</strong> activity.</p>
+<p>Select <strong>Static Queue</strong></p>
+<p>Queue name: <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Queue">235</span>_Queue<span class="copy" title="Click to copy!"></span></span></strong>
+</p>
+</blockquote>
+<ul>
+<li><strong>Play Music</strong></li>
+</ul>
+<blockquote>
+<p>Create a loop by connecting the Play Music activity back to itself - to create a music loop, following the diagram provided.</p>
+<p>Connect the <strong>Failure</strong> path from the <strong>Play Music</strong> activity to the <strong>Disconnect Contact</strong> activity.</p>
+<p>Music File: <strong>defaultmusic_on_hold.wav</strong>
+</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Validate</strong> and <strong>Publish</strong> Flow. In popped up window click on dropdown menu to select <strong>Latest</strong> label, then click <strong>Publish</strong>  </p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_Flow_AddQueue.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_Flow_AddQueue.gif"></a>  </p>
+</li>
+<li>
+<p>Assign the Flow to your <strong>Channel (Entry Point)</strong> - Do this by first going to <strong>Channel</strong> &gt; Search for your channel <strong><span class="attendee-id-placeholder">235</span>_Channel</strong>.</p>
+</li>
+<li>Click on <strong><span class="attendee-id-placeholder">235</span>_Channel</strong></li>
+<li>
+<p>In <strong>Entry Point</strong> Settings section change the following:</p>
+<blockquote>
+<p>Routing Flow: <strong><span class="attendee-id-container">AutonomousAI_Flow_<span class="attendee-id-placeholder" data-prefix="AutonomousAI_Flow_">235</span><span class="copy" title="Click to copy!"></span></span></strong></p>
+<p>Version Label: <strong>Latest</strong></p>
+</blockquote>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_FlowtoEP.gif" data-type="image" data-width="100%" data-height="auto" data-title="Profiles" data-desc-position="top"><img alt="Profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_FlowtoEP.gif"></a>  </p>
+</li>
+<li>
+<p>Dial Support Number assigned to your <strong><span class="attendee-id-placeholder">235</span>_Channel</strong> to test the Autonomous Virtual Agent over a voice call.</p>
+</li>
+</ol>
+<h2 id="testing">Testing</h2>
+<ol>
+<li>Your Agent desktop session should be still active but if not, use Webex CC Desktop application <a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/overview/Desktop_Icon40x40.png" data-type="image" data-width="100%" data-height="auto" data-title="profiles" data-desc-position="top"><img alt="profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/overview/Desktop_Icon40x40.png"></a>  and login with agent credentials you have been provided <strong><span class="attendee-id-container">wxcclabs+agent_ID<span class="attendee-id-placeholder" data-prefix="wxcclabs+agent_ID" data-suffix="@gmail.com">235</span>@gmail.com<span class="copy" title="Click to copy!"></span></span></strong>. You will see another login screen with OKTA on it where you may need to enter the email address again and the password provided to you. </li>
+<li>Select Team <strong><span class="attendee-id-container"><span class="attendee-id-placeholder" data-suffix="_Team">235</span>_Team<span class="copy" title="Click to copy!"></span></span></strong>. Click <strong>Submit</strong>. Allow browser to access Microphone by clicking <strong>Allow</strong> on every visit.</li>
+<li>
+<p>Make your agent <strong><em>Available</em></strong> and you're ready to make a call.</p>
+<p><a class="glightbox" href="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/5-Agent_Login.gif" data-type="image" data-width="100%" data-height="auto" data-title="profiles" data-desc-position="top"><img alt="profiles" src="https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/5-Agent_Login.gif"></a></p>
+</li>
+<li>
+<p>Dial the support number assigned to your <strong><span class="attendee-id-placeholder">235</span>_Channel</strong> channel, and during the conversation with the virtual agent, ask about restaurants in Amsterdam or places to visit to explore historical sites.</p>
+</li>
+<li>
+<p>Any time during conversation request to connect you with a live agent. The call will be transferred to your agent.</p>
+</li>
+</ol>
+<p style="text-align:center"><strong>Congratulations, you have officially completed the Autonomous Virtual Agent mission! 🎉🎉 </strong></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
