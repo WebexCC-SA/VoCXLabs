@@ -6,7 +6,7 @@
 > 
 > Click the Source Control button in the left menu ![alt text](assets/sourceControl.png)
 >
-> Click the plus sign next to each file you want to sync as you hover over the file names or alternatively, click the puls sign next to changes
+> Click the plus sign next to each file you want to sync as you hover over the file names or alternatively, click the plus sign next to changes
 >
 > Enter a note about the changes you are making in the message text box
 >

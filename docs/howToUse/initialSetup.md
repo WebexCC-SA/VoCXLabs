@@ -15,14 +15,17 @@
 ### Clone your repository with git
 > Open Visual Studio Code
 >
-> Click the Source Control button in the left menu ![alt text](assets/sourceControl.png)
-> 
+> Click the Source Control button in the left menu ![](assets/sourceControl.png)
+>
 > Click Clone Repository
 >
 > Enter the repository source: <copy> {{config.extra.repo}}</copy>
 >
 > Select or create a new folder to clone the repository into.
 >
+> 
+
+
 
 ### Build the environment
 
@@ -35,7 +38,8 @@
 
 
 
-> ??? Note "If you are on a PC"
+> === "If you are on a PC"
+> 
     > In your terminal enter the following commands:
     >
     > <copy>python -m venv venv</copy>
@@ -44,24 +48,28 @@
     >
     > <copy>venv\Scripts\activate.ps1</copy>
     > 
+    > <copy>pip install -r requirements.txt</copy>
+    >
+    > <copy>mkdocs serve</copy>
+    >
+    > Open a browser to [http://127.0.0.1:8000](http://127.0.0.1:8000){:target="_blank"}
+    >
 
 
 
-> ??? Note "If you are on a Mac"
+> === "If you are on a Mac"
+> 
     > In your terminal enter the following commands:
     >
     > <copy>python -m venv venv</copy>
     >
     > <copy>source venv/bin/activate</copy>
-    > 
-    
-    
-    
-> <copy>pip install -r requirements.txt</copy>
->
-> <copy>mkdocs serve</copy>
->
-> Open a browser to [http://127.0.0.1:8000](http://127.0.0.1:8000){:target="_blank"}
->
----
+    >     
+    > <copy>pip install -r requirements.txt</copy>
+    >
+    > <copy>mkdocs serve</copy>
+    >
+    > Open a browser to [http://127.0.0.1:8000](http://127.0.0.1:8000){:target="_blank"}
 
+
+---

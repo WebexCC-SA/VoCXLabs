@@ -41,6 +41,7 @@ extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - template_assets/js/newLoad.js
+  - template_assets/js/setInfo.js
 plugins:
   - search
   - macros
@@ -75,6 +76,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.highlight
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -87,7 +90,12 @@ nav:
       - Webex One Partner Lab: webexone_ai_agent_lab.md
       - Conclusion: conclusion.md
   - How to use this guide:
-      - Initial Setup: howToUse/initialSetup.md
-      - Using the tool after the initial setup: howToUse/postInitial.md
-      - Publishing your changes: howToUse/syncChanges.md
+      - Setting up and using the tool:
+        - Initial Setup: howToUse/initialSetup.md
+        - Using the tool after the initial setup: howToUse/postInitial.md
+        - Publishing your changes: howToUse/syncChanges.md
+      - Styling and Advanced Features:
+        - Markdown and Other References: howToUse/references.md
+        - Custom Features: howToUse/customFeatures.md
+        - Custom Admonitions: howToUse/admonition.md
  
