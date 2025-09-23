@@ -61,7 +61,7 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
 
 2. Go to **Contact Center** from the left navigation panel → **AI Agents**  
 > ??? Note "Show Me"
-   ![alt text](assets/openTerminalCreateKB.gif)
+   ![](assets/CreateKB.gif)
 
 3. Click on Build your AI Agent
 
