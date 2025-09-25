@@ -60,7 +60,7 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
    Password  
 
 2. Go to **Contact Center** from the left navigation panel → **AI Agents**  
- ??? Note "Show Me"
+??? Note "Show Me"
       ![](assets/CreateKB.gif)
 
 3. Click on Build your AI Agent
@@ -72,20 +72,23 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
 6. Click <strong>Add File</strong> or drag and drop file <strong>San Diego Travel AI Bot - Webex One Knowledge Base.pdf</strong> you downloaded from external drive on <strong>Step 1</strong>. Then click <strong>Process Files</strong>.</p>
 
 7. Upload **San Diego Travel AI Bot - Webex One Knowledge Base.pdf** → **Process Files**  and Click the Back Arrow in the top Left after Processing is complete. 
-
-   ![File Upload](https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AIKBFileUpload.gif)  
+??? Note "Show Me"
+      ![](assets/UploadKB.gif)
 
 ### Creating the AI Agent
 
 1. Go to **Dashboard → Create Agent**  
 
-9. Choose Autonomous and Fill in the following details
+2. Choose Autonomous and Fill in the following details
     > Agent Name: **`###_TravelAI_Auto`**  
     > System ID: *auto generated*  
     > AI engine: **Webex AI Pro 1.0**  
     > Agents Goal: *You are a knowledgeable and personable travel assistant that helps customers manage, discover and enhance their vacations, delivering seamless support, solving problems quickly, finding the perfect restaurant and upselling relevant perks—all while showcasing the potential of AI in modern customer experience.*
 
-6. Once in the AI Agent Configuration Enter the following Instructions:
+??? Note "Show Me"
+      ![](assets/CreateAIAgent.gif)
+
+3. Once in the AI Agent Configuration Enter the following Instructions:
     > *Acknowledge & Confirm Always start by summarizing the user’s request in your own words. 
     Ask the user to confirm that you understood correctly before taking action.
     Clarify When Needed
@@ -109,24 +112,25 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
     Closure
     Always thank the user for choosing your service.
     End with a warm goodbye and an offer for further help. (“Enjoy your trip! Let me know if you’d like more dining tips or activities later.”)* 
+??? Note "Show Me"
+      ![](assets/InstructionAIAgent.gif)
 
-7. In AI Agent Configuration → go to **Knowledge** Tab at the top.  
-8. Go to **Knowledge** tab → select **`###_TravelAI_KB`** 
+4. In AI Agent Configuration → go to **Knowledge** Tab at the top.  
+5. Go to **Knowledge** tab → select **`###_TravelAI_KB`** 
+6. Click **Save Changes**
+??? Note "Show Me"
+      ![](assets/AttachKB.gif)
 
-   ![Create KB](https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AIKBCreate.gif)  
+7. Go to **Actions** tab → turn ON **Agent handover**.   
+8. Click **Save Changes → Publish** (enter version name like "1.0").  
+??? Note "Show Me"
+      ![](assets/AgentHandover.gif)
 
-9. Click **Save Changes**
-10. Go to **Actions** tab → turn ON **Agent handover**.   
-11. Click **Save Changes → Publish** (enter version name like "1.0").  
-
-    ![Map KB](https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentaMapKB.gif)  
-
-13. Click **Preview** → test by asking:  
+9. Click **Preview** → test by asking:  
     `"I'm looking for someplace to eat."`  
+??? Note "Show Me"
+      ![](assets/PreviewAgent.gif)
 
-    ![Preview Agent](https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/AITrack_AIAgentPreview.gif)  
-
----
 
 ## Integrating the Bot with Flow for Voice Calls
 1. In [Webex Control Hub](https://admin.webex.com/wxcc/ccoverview) → **Flows → Manage Flows → Create Flow**  
