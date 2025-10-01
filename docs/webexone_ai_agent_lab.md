@@ -275,7 +275,7 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
 
 3. Once in the AI Agent Configuration and Enter the following Instructions:
     <p>
-  <code id="copyPrompt">
+  <code id="copyPromp1t">
     > *Acknowledge & Confirm Always start by summarizing the user’s request in your own words. 
     Ask the user to confirm that you understood correctly before taking action.
     Clarify When Needed
@@ -301,7 +301,7 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
     End with a warm goodbye and an offer for further help. (“Enjoy your trip! Let me know if you’d like more dining tips or activities later.”)* 
     </code>
 </p>
-<button onclick="copyToClipboard('copyPrompt')">Copy</button>
+<button onclick="copyToClipboard('copyPrompt1')">Copy</button>
 
 ??? Note "Show Me"
       ![](assets/InstructionAIAgent.gif)
