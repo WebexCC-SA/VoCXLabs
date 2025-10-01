@@ -275,7 +275,7 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
 
 3. Once in the AI Agent Configuration and Enter the following Instructions:
     <p>
-  <code id="copyPromp1t">
+  <code id="copyPrompt1">
     > *Acknowledge & Confirm Always start by summarizing the user’s request in your own words. 
     Ask the user to confirm that you understood correctly before taking action.
     Clarify When Needed
