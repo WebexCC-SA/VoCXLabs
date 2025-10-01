@@ -365,7 +365,7 @@ Whether it’s recommending hidden-gem restaurants, suggesting exciting things t
 
    ![Flow to EP](https://webexcc-sa.github.io/LTRCCT-2296/graphics/Lab1/L1M7_AutonomousAI_FlowtoEP.gif)  
 
-7. Dial the support number assigned to **`###_Channel`** to test.  
+7. Dial the support number assigned to test.  
 
 ---
 
