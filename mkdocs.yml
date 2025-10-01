@@ -1,6 +1,6 @@
 ---
 site_name: VoCX Voice Of Customer Experience # This must begin with the session ID, e.g. LABXXX-1234 This is my Cisco Live Lab
-site_description: VoCX Voice Of Customer Experience # must be same as "site_name"
+site_description: WebexOne AI Agent Lab # must be same as "site_name"
 site_author: Stephanie Ross
 copyright: Copyright &copy; 2025 Cisco
 theme:
@@ -86,9 +86,10 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Lab:
-      # - Overview: overview.md
+      # - Overview: webexone_ai_agent_lab.md
       - Webex One Partner Lab: webexone_ai_agent_lab.md
-      - Test: test.md
+      #- Test: test.md
+      #- Custom: howToUse/customFeatures.md
       # - Conclusion: conclusion.md
   # - How to use this guide:
   #     - Setting up and using the tool:
