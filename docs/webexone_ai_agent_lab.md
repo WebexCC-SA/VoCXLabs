@@ -415,7 +415,6 @@ Sarcastic: "Oh, another adventure, huh? Lucky you! What can I help you survive t
 #### Test Your Changes
 Once updated, call the Voice Bot and notice how the shorter, conversational prompts make interactions quicker, clearer, and more engaging. Try experimenting with tone—friendly, witty, or sarcastic—and see how it changes the user experience.
 
-- **Inbound Channel Phone Number:** <span id="channelPhone"></span>  
 
 **🎉 Congratulations, you have officially completed the Autonomous Virtual Agent mission! 🎉**
 
