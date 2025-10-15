@@ -1,4 +1,4 @@
-##ROI Calculator
+##ROI Calculator - For use for PVT CX Esperience only
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +7,11 @@
   <title>AI Agent ROI Calculator</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    .container {
-  isolation: isolate;              /* separates from parent opacity filters */
-  filter: none !important;         /* prevents inherited dimming */
-  opacity: 1 !important;           /* ensures full brightness */
-  color-scheme: only light;
-}
+    :root {
+      color-scheme: only light;
+    }
     body {font-family: Arial, sans-serif; background:#f4f6f9; margin:0; padding:20px;}
-    .container {max-width:850px; margin:0 auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);} 
+    .container {max-width:850px; margin:0 auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); color:#000;}
     h1 {text-align:center; color:#005073; margin-bottom:20px;}
     label {display:block; margin-top:15px; font-weight:bold;}
     input[type='number'] {width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; margin-top:5px;}
@@ -23,7 +20,7 @@
     .preset-buttons {display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:20px;}
     .preset-buttons button {background:#0077b6; color:white; border:none; padding:10px 14px; border-radius:6px; cursor:pointer;}
     .preset-buttons button:hover {background:#005073;}
-    .results {margin-top:30px; background:#e8f4f8; padding:20px; border-radius:8px;}
+    .results {margin-top:30px; background:#e8f4f8; padding:20px; border-radius:8px; color:#000;}
     .results h3 {margin-top:0; color:#005073;}
     canvas {margin-top:20px; width:100%; max-height:300px;}
   </style>
@@ -120,90 +117,83 @@
     });
 
     function updateCharts(roi, totalSavings, aiInvestment) {
-  const ctxGauge = document.getElementById('roiGauge').getContext('2d');
-  const ctxBar = document.getElementById('roiBar').getContext('2d');
+      const ctxGauge = document.getElementById('roiGauge').getContext('2d');
+      const ctxBar = document.getElementById('roiBar').getContext('2d');
 
-  if (roiGaugeChart) roiGaugeChart.destroy();
-  if (roiBarChart) roiBarChart.destroy();
+      if (roiGaugeChart) roiGaugeChart.destroy();
+      if (roiBarChart) roiBarChart.destroy();
 
-  // Set gauge color by ROI zone
-  let gaugeColor = '#00b300'; // green
-  if (roi < 0) gaugeColor = '#d00000';
-  else if (roi < 50) gaugeColor = '#ffcc00';
+      // Determine gauge color zones
+      let gaugeColor = '#00b300'; // green
+      if (roi < 0) gaugeColor = '#d00000';
+      else if (roi < 50) gaugeColor = '#ffcc00';
 
-  roiGaugeChart = new Chart(ctxGauge, {
-    type: 'doughnut',
-    data: {
-      labels: ['ROI %', 'Remaining'],
-      datasets: [{
-        data: [Math.min(Math.max(roi, 0), 100), 100 - Math.min(Math.max(roi, 0), 100)],
-        backgroundColor: [gaugeColor, '#d0e7f9'],
-        borderWidth: 0
-      }]
-    },
-    options: {
-      rotation: -90,
-      circumference: 180,
-      cutout: '70%',
-      plugins: {
-        legend: { display: false },
-        tooltip: { enabled: false },
-        title: {
-          display: true,
-          text: `ROI Gauge`,
-          color: '#005073',
-          font: { size: 16, weight: 'bold' }
+      roiGaugeChart = new Chart(ctxGauge, {
+        type: 'doughnut',
+        data: {
+          labels: ['ROI %', 'Remaining'],
+          datasets: [{
+            data: [Math.min(Math.max(roi, 0), 100), 100 - Math.min(Math.max(roi, 0), 100)],
+            backgroundColor: [gaugeColor, '#d0e7f9'],
+            borderWidth: 0
+          }]
         },
-        annotation: {
-          annotations: {}
-        }
-      },
-      animation: { duration: 800 }
-    },
-    plugins: [{
-      id: 'centerText',
-      afterDraw(chart) {
-        const { ctx, chartArea: { width } } = chart;
-        ctx.save();
-        ctx.font = 'bold 22px Arial';
-        ctx.fillStyle = gaugeColor;
-        ctx.textAlign = 'center';
-        ctx.fillText(`${roi.toFixed(1)}%`, width / 2, chart._metasets[0].data[0].y + 20);
-        ctx.restore();
-      }
-    }]
-  });
+        options: {
+          rotation: -90,
+          circumference: 180,
+          cutout: '70%',
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false },
+            title: {
+              display: true,
+              text: 'ROI Gauge',
+              color: '#005073',
+              font: { size: 16, weight: 'bold' }
+            }
+          }
+        },
+        plugins: [{
+          id: 'centerText',
+          afterDraw(chart) {
+            const { ctx, chartArea: { width } } = chart;
+            ctx.save();
+            ctx.font = 'bold 22px Arial';
+            ctx.fillStyle = gaugeColor;
+            ctx.textAlign = 'center';
+            ctx.fillText(`${roi.toFixed(1)}%`, width / 2, chart._metasets[0].data[0].y + 20);
+            ctx.restore();
+          }
+        }]
+      });
 
-  // ROI comparison bar
-  roiBarChart = new Chart(ctxBar, {
-    type: 'bar',
-    data: {
-      labels: ['Total Savings', 'AI Investment'],
-      datasets: [{
-        label: 'USD ($)',
-        data: [totalSavings, aiInvestment],
-        backgroundColor: ['#00b4d8', '#ffb703']
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: { callback: value => '$' + value.toLocaleString() }
+      roiBarChart = new Chart(ctxBar, {
+        type: 'bar',
+        data: {
+          labels: ['Total Savings', 'AI Investment'],
+          datasets: [{
+            label: 'USD ($)',
+            data: [totalSavings, aiInvestment],
+            backgroundColor: ['#00b4d8', '#ffb703']
+          }]
+        },
+        options: {
+          scales: {
+            y: {beginAtZero: true, ticks: {callback: value => '$' + value.toLocaleString()}}
+          },
+          plugins: {
+            legend: {display: false},
+            title: {
+              display: true,
+              text: 'Total Savings vs Investment',
+              color: '#005073',
+              font: {size: 16, weight: 'bold'}
+            }
+          }
         }
-      },
-      plugins: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: 'Total Savings vs Investment',
-          color: '#005073',
-          font: { size: 16, weight: 'bold' }
-        }
-      }
+      });
     }
-  });
-}
   </script>
 </body>
 </html>
+
