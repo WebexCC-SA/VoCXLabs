@@ -1,4 +1,4 @@
-##ROI Calculator For use for PVT CX Esperience only
+##ROI Calculator For use for PVT - CX Experience only
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +7,12 @@
   <title>AI Agent ROI Calculator</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
-    :root {
-      color-scheme: only light;
-    }
+    :root { color-scheme: only light; }
     body {font-family: Arial, sans-serif; background:#f4f6f9; margin:0; padding:20px;}
     .container {max-width:850px; margin:0 auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1); color:#000;}
     h1 {text-align:center; color:#005073; margin-bottom:20px;}
     label {display:block; margin-top:15px; font-weight:bold;}
+    small {display:block; color:#555; margin-top:3px; font-size:13px;}
     input[type='number'] {width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; margin-top:5px;}
     button {margin-top:20px; background:#005073; color:#fff; border:none; padding:12px 18px; border-radius:6px; cursor:pointer; font-size:16px;}
     button:hover {background:#0077b6;}
@@ -37,31 +36,40 @@
     </div>
 
     <label for="agents">Number of Agents</label>
-    <input type="number" id="agents" placeholder="e.g. 200" />
+    <small>Total number of live agents in your contact center. <strong>Default: 100 agents.</strong></small>
+    <input type="number" id="agents" placeholder="e.g. 100" />
 
     <label for="costAgent">Agent Loaded Cost per Year ($)</label>
+    <small>Total annual cost per agent including salary, benefits, and tools. <strong>Default: $36,000/year ($3K/month).</strong></small>
     <input type="number" id="costAgent" placeholder="e.g. 36000" />
 
     <label for="supervisors">Number of Supervisors</label>
-    <input type="number" id="supervisors" placeholder="e.g. 20" />
+    <small>Supervisors typically represent about <strong>10% of total agents</strong>. <strong>Default: 10 supervisors for 100 agents.</strong></small>
+    <input type="number" id="supervisors" placeholder="e.g. 10" />
 
     <label for="costSupervisor">Supervisor Cost per Year ($)</label>
+    <small>Supervisors generally cost about <strong>25% more than agents</strong> due to higher pay and responsibility. <strong>Default: $45,000/year ($3.75K/month).</strong></small>
     <input type="number" id="costSupervisor" placeholder="e.g. 45000" />
 
     <label for="aiLicenses">AI Licenses ($)</label>
-    <input type="number" id="aiLicenses" placeholder="e.g. 300000" />
+    <small>Annual AI software license investment. <strong>Default: $150,000.</strong></small>
+    <input type="number" id="aiLicenses" placeholder="e.g. 150000" />
 
     <label for="aiServices">AI Services ($)</label>
-    <input type="number" id="aiServices" placeholder="e.g. 960000" />
+    <small>Annual AI setup, support, or customization cost. <strong>Default: $300,000.</strong></small>
+    <input type="number" id="aiServices" placeholder="e.g. 300000" />
 
     <label for="agentsSaved">Agents Saved (FTE Reduction)</label>
-    <input type="number" id="agentsSaved" placeholder="e.g. 57" />
+    <small>Estimated full-time equivalents reduced through automation. <strong>Default: 10 agents (10% savings).</strong></small>
+    <input type="number" id="agentsSaved" placeholder="e.g. 10" />
 
     <label for="handleSavings">Handle Time Savings ($)</label>
-    <input type="number" id="handleSavings" placeholder="e.g. 360000" />
+    <small>Savings from faster handling and reduced call times. <strong>Default: $100,000/year (~5–10% handle-time reduction).</strong></small>
+    <input type="number" id="handleSavings" placeholder="e.g. 100000" />
 
     <label for="hiringSavings">Hiring Cost Savings ($)</label>
-    <input type="number" id="hiringSavings" placeholder="e.g. 244000" />
+    <small>Reduction in recruitment and onboarding expenses. <strong>Default: $50,000/year.</strong></small>
+    <input type="number" id="hiringSavings" placeholder="e.g. 50000" />
 
     <button id="calcBtn">Calculate ROI</button>
 
@@ -123,8 +131,7 @@
       if (roiGaugeChart) roiGaugeChart.destroy();
       if (roiBarChart) roiBarChart.destroy();
 
-      // Determine gauge color zones
-      let gaugeColor = '#00b300'; // green
+      let gaugeColor = '#00b300';
       if (roi < 0) gaugeColor = '#d00000';
       else if (roi < 50) gaugeColor = '#ffcc00';
 
@@ -196,4 +203,3 @@
   </script>
 </body>
 </html>
-
