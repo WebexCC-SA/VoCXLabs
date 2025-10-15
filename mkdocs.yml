@@ -94,6 +94,8 @@ nav:
   - Calculators: 
       - Voice AI Agent: topologies.md
       - ROI Calculator: overview.md
+  - STLDP:
+     - Mockup: stldpmock.md
   #       - Initial Setup: howToUse/initialSetup.md
   #       - Using the tool after the initial setup: howToUse/postInitial.md
   #       - Publishing your changes: howToUse/syncChanges.md
