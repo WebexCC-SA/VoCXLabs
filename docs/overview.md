@@ -7,6 +7,12 @@
   <title>AI Agent ROI Calculator</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
+    .container {
+  isolation: isolate;              /* separates from parent opacity filters */
+  filter: none !important;         /* prevents inherited dimming */
+  opacity: 1 !important;           /* ensures full brightness */
+  color-scheme: only light;
+}
     body {font-family: Arial, sans-serif; background:#f4f6f9; margin:0; padding:20px;}
     .container {max-width:850px; margin:0 auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);} 
     h1 {text-align:center; color:#005073; margin-bottom:20px;}
@@ -114,65 +120,90 @@
     });
 
     function updateCharts(roi, totalSavings, aiInvestment) {
-      const ctxGauge = document.getElementById('roiGauge').getContext('2d');
-      const ctxBar = document.getElementById('roiBar').getContext('2d');
+  const ctxGauge = document.getElementById('roiGauge').getContext('2d');
+  const ctxBar = document.getElementById('roiBar').getContext('2d');
 
-      if (roiGaugeChart) roiGaugeChart.destroy();
-      if (roiBarChart) roiBarChart.destroy();
+  if (roiGaugeChart) roiGaugeChart.destroy();
+  if (roiBarChart) roiBarChart.destroy();
 
-      roiGaugeChart = new Chart(ctxGauge, {
-        type: 'doughnut',
-        data: {
-          labels: ['ROI %', 'Remaining'],
-          datasets: [{
-            data: [Math.max(roi, 0), 100 - Math.max(roi, 0)],
-            backgroundColor: ['#0077b6', '#d0e7f9'],
-            borderWidth: 0
-          }]
+  // Set gauge color by ROI zone
+  let gaugeColor = '#00b300'; // green
+  if (roi < 0) gaugeColor = '#d00000';
+  else if (roi < 50) gaugeColor = '#ffcc00';
+
+  roiGaugeChart = new Chart(ctxGauge, {
+    type: 'doughnut',
+    data: {
+      labels: ['ROI %', 'Remaining'],
+      datasets: [{
+        data: [Math.min(Math.max(roi, 0), 100), 100 - Math.min(Math.max(roi, 0), 100)],
+        backgroundColor: [gaugeColor, '#d0e7f9'],
+        borderWidth: 0
+      }]
+    },
+    options: {
+      rotation: -90,
+      circumference: 180,
+      cutout: '70%',
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        title: {
+          display: true,
+          text: `ROI Gauge`,
+          color: '#005073',
+          font: { size: 16, weight: 'bold' }
         },
-        options: {
-          rotation: -90,
-          circumference: 180,
-          cutout: '75%',
-          plugins: {
-            legend: {display: false},
-            tooltip: {enabled: false},
-            title: {
-              display: true,
-              text: `ROI: ${roi.toFixed(1)}%`,
-              color: '#005073',
-              font: {size: 18, weight: 'bold'}
-            }
-          }
+        annotation: {
+          annotations: {}
         }
-      });
+      },
+      animation: { duration: 800 }
+    },
+    plugins: [{
+      id: 'centerText',
+      afterDraw(chart) {
+        const { ctx, chartArea: { width } } = chart;
+        ctx.save();
+        ctx.font = 'bold 22px Arial';
+        ctx.fillStyle = gaugeColor;
+        ctx.textAlign = 'center';
+        ctx.fillText(`${roi.toFixed(1)}%`, width / 2, chart._metasets[0].data[0].y + 20);
+        ctx.restore();
+      }
+    }]
+  });
 
-      roiBarChart = new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-          labels: ['Total Savings', 'AI Investment'],
-          datasets: [{
-            label: 'USD ($)',
-            data: [totalSavings, aiInvestment],
-            backgroundColor: ['#00b4d8', '#ffb703']
-          }]
-        },
-        options: {
-          scales: {
-            y: {beginAtZero: true, ticks: {callback: value => '$' + value.toLocaleString()}}
-          },
-          plugins: {
-            legend: {display: false},
-            title: {
-              display: true,
-              text: 'Total Savings vs Investment',
-              color: '#005073',
-              font: {size: 16, weight: 'bold'}
-            }
-          }
+  // ROI comparison bar
+  roiBarChart = new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: ['Total Savings', 'AI Investment'],
+      datasets: [{
+        label: 'USD ($)',
+        data: [totalSavings, aiInvestment],
+        backgroundColor: ['#00b4d8', '#ffb703']
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: value => '$' + value.toLocaleString() }
         }
-      });
+      },
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Total Savings vs Investment',
+          color: '#005073',
+          font: { size: 16, weight: 'bold' }
+        }
+      }
     }
+  });
+}
   </script>
 </body>
 </html>
