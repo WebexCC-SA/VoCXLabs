@@ -94,6 +94,7 @@ nav:
   - Calculators: 
       - Voice AI Agent: topologies.md
       - ROI Calculator: overview.md
+      - ROI TEI Calculator: teiroi.md
   - STLDP:
      - Mockup: stldpmock.md
   #       - Initial Setup: howToUse/initialSetup.md
