@@ -92,7 +92,8 @@ nav:
       #- Custom: howToUse/customFeatures.md
       # - Conclusion: conclusion.md
   - Calculators: 
-      - Voice AI Agent: topologies.md
+      - Voice AI Agent: AIAgentVoice.md
+      - Digital AI Agent: AIAgentDigital.md
       - ROI Calculator: overview.md
       - ROI TEI Calculator: teiroi.md
   - STLDP:
