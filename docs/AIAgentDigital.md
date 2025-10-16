@@ -110,11 +110,6 @@
         </section>
       </div>
 
-      <div class="btnbar" style="margin-top:10px">
-        <button class="btn secondary" id="presetExample">Load Example From Deck</button>
-        <button class="btn" id="calcBtn2">Recalculate</button>
-      </div>
-
       <section class="card" style="margin-top:16px">
         <h3>Results</h3>
         <div class="kpi">
