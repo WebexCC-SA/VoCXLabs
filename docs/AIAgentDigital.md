@@ -81,13 +81,13 @@
           <div class="row">
             <div>
               <label for="sessionsPerUnitScript">Sessions per Unit – Scripted</label>
-              <div class="sub">Static: 2,000 sessions / unit</div>
-              <input type="number" id="sessionsPerUnitScript" value="2000" readonly />
+              <div class="sub">Static: 4,800 sessions / unit</div>
+              <input type="number" id="sessionsPerUnitScript" value="4800" readonly />
             </div>
             <div>
               <label for="sessionsPerUnitAuto">Sessions per Unit – Autonomous</label>
-              <div class="sub">Static: 400 sessions / unit</div>
-              <input type="number" id="sessionsPerUnitAuto" value="400" readonly />
+              <div class="sub">Static: 200 sessions / unit</div>
+              <input type="number" id="sessionsPerUnitAuto" value="4=200" readonly />
             </div>
           </div>
 
@@ -144,8 +144,8 @@
     const avgMsgSession = +$('avgMsgSession').value || 1;
     const sessionDuration = +$('sessionDuration').value || 600;
     const overagePct = (+$('overagePct').value || 0) / 100;
-    const sps = 2000; // static scripted
-    const spa = 400;  // static autonomous
+    const sps = 4800; // static scripted
+    const spa = 200;  // static autonomous
 
     const msgsMonth = msgsYear / 12;
     const sessionsMonth = msgsMonth / avgMsgSession;
@@ -163,8 +163,8 @@
     const steps = [
       ['1) Messages per Month', 'Msgs/Year ÷ 12', nf(msgsMonth,0)],
       ['2) Sessions per Month', 'Msgs/Month ÷ Avg Msgs/Session', nf(sessionsMonth,0)],
-      ['3) Scripted Units (base)', 'Sessions ÷ 2,000', nf(scriptedUnitsBase,2)],
-      ['4) Autonomous Units (base)', 'Sessions ÷ 400', nf(autoUnitsBase,2)],
+      ['3) Scripted Units (base)', 'Sessions ÷ 4,800', nf(scriptedUnitsBase,2)],
+      ['4) Autonomous Units (base)', 'Sessions ÷ 200', nf(autoUnitsBase,2)],
       ['5) Buffer Applied', 'Units × (1 + buffer%)', `${nf(overagePct*100,1)}%`],
       ['6) Scripted Units (rounded)', 'ceil(3×(1+buf))', nf(Math.ceil(scriptedUnitsBuffered),0)],
       ['7) Autonomous Units (rounded)', 'ceil(4×(1+buf))', nf(Math.ceil(autoUnitsBuffered),0)]
