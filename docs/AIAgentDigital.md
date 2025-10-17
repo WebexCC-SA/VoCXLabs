@@ -87,7 +87,7 @@
             <div>
               <label for="sessionsPerUnitAuto">Sessions per Unit – Autonomous</label>
               <div class="sub">Static: 200 sessions / unit</div>
-              <input type="number" id="sessionsPerUnitAuto" value="4=200" readonly />
+              <input type="number" id="sessionsPerUnitAuto" value="200" readonly />
             </div>
           </div>
 
