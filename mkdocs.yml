@@ -87,7 +87,7 @@ nav:
   - Home: index.md
   - Lab:
       # - Overview: webexone_ai_agent_lab.md
-     # - Webex One Partner Lab: webexone_ai_agent_lab.md
+      # - Webex One Partner Lab: webexone_ai_agent_lab.md
       #- Test: test.md
       #- Custom: howToUse/customFeatures.md
       # - Conclusion: conclusion.md
@@ -97,7 +97,7 @@ nav:
       - ROI Calculator: overview.md
       - ROI TEI Calculator: teiroi.md
   #- STLDP:
-   #  - Mockup: stldpmock.md
+  #  - Mockup: stldpmock.md
   #       - Initial Setup: howToUse/initialSetup.md
   #       - Using the tool after the initial setup: howToUse/postInitial.md
   #       - Publishing your changes: howToUse/syncChanges.md
