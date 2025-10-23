@@ -85,6 +85,7 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 nav:
   - Home: index.md
+  - AI Agent: pvt_ai.md
   - Lab:
      - Overview: webexone_ai_agent_lab.md
      - Webex One Partner Lab: webexone_ai_agent_lab.md
