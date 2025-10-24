@@ -97,8 +97,8 @@ nav:
       - Digital AI Agent: AIAgentDigital.md
       - ROI Calculator: overview.md
       - ROI TEI Calculator: teiroi.md
-  # - STLDP:
-  #  - Mockup: stldpmock.md
+  - STLDP:
+    - Mockup: stldpmock.md
   #       - Initial Setup: howToUse/initialSetup.md
   #       - Using the tool after the initial setup: howToUse/postInitial.md
   #       - Publishing your changes: howToUse/syncChanges.md
